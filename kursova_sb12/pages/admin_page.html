@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/admin_page.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <h1 class="rer">Тканина у Артема</h1>
+    
+    <div class="menu">
+        <button  class="button" onclick="show('add_tovar')">Додати товар</button>
+    </div>
+    <div class="add_tovar" id="add_tovar">
+        <button class="button" onclick="hide('add_tovar')">x</button>
+        <div class="form">
+            <h3 aling="center">Додаваня</h3>
+            <label for="">Назва товару</label><br>
+            <input type="text" class="tovar_info form-control"  id="tovar_name"><br>
+            
+            <label for="">Опис товару</label><br>
+            <input type="text" class="tovar_info form-control" id="tovar_opis"><br>
+            
+            
+            <label for="">Ціна</label><br>
+            <input type="number" class="tovar_info form-control" id="tovar_price"><br>
+
+            
+            <label for="">Матеріал</label><br>
+            <select name="" id="tovar_material" class="form-select" aria-label="Default select example">
+                <option value=""></option>
+                <option value="Synthetic">Синтетика</option>
+                <option value="Cotton">Бавовна</option>
+                <option value="Linen">Льон </option>
+                <option value="Wool">Вовна </option>
+                <option value="Silk">Шовк </option>
+            </select><br>
+
+            <label for="">колір</label><br>
+            <select name="" id="tovar_col" class="form-select" aria-label="Default select example">
+                <option value=""></option>
+                <option value="blue">Синій</option>
+                <option value="red">Червоний</option>
+                <option value="orange">оранжовий</option>
+                <option value="brown">коричновий </option>
+                <option value="green">зелений</option>
+                <option value="white">білий</option>
+            </select><br>
+            
+
+            <label for="">Довжина в метрах</label><br>
+            <input type="number" class="tovar_info form-control" id="tovar_dovzina"><br>
+            
+            <label for="">Ширина в метрах</label><br>
+            <input type="number" class="tovar_info form-control" id="tovar_hirina"><br>
+            
+            <label for="">в роздріб чи рулоном</label><br>
+            <select name="" id="tovar_type" class="form-select" aria-label="Default select example">
+                <option value=""></option>
+                <option value="rozdrib">Роздріб</option>
+                <option value="rylon">Рулоном</option>
+            </select><br>
+
+            <label for="">Виробник</label><br>
+            <select name="" id="tovar_virobnik" class="form-select" aria-label="Default select example">
+                <option value=""></option>
+                <option value="ALSAN TEXTILE">АЛСАН ТЕКСТИЛЬ</option>
+                <option value="VITA-TEX">ВІТА-ТЕКС</option>
+                <option value="VULTEX-S">ВУЛТЕКС-С</option>
+                <option value="VLADI">VLADI</option>
+                <option value="TECHNOTEXTILES PLUS">ТЕХНОТЕКСТИЛЬ ПЛЮС</option>
+                <option value="SYNERGY">СИНЕРГІЯ</option>
+                <option value="PROBTENS">ПРОБТЕНС</option>
+                <option value="NR PRODUCTION COMPANY">НР ВИРОБНИЧА КОМПАНІЯ</option>
+                
+            </select><br>
+            <button class="button" onclick="add_tovar()">Додати товар</button>
+            
+        </div>
+    </div>
+    <div class="add_tovar" id="add_tovar_edit">
+        <button onclick="hide('add_tovar_edit')">x</button>
+        <div class="form">
+            <h3 aling="center">Редагування</h3>
+            <label for="">Назва товару</label><br>
+            <input type="text" class="tovar_info form-control"  id="tovar_name_edit"><br>
+            
+            <label for="">Опис товару</label><br>
+            <input type="text" class="tovar_info form-control" id="tovar_opis_edit"><br>
+            
+            
+            <label for="">Ціна</label><br>
+            <input type="number" class="tovar_info form-control" id="tovar_price_edit"><br>
+
+            
+            <label for="">Матеріал</label><br>
+            <select name="" id="tovar_material_edit" class="form-select" aria-label="Default select example">
+                <option value=""></option>
+                <option value="Synthetic">Синтетика</option>
+                <option value="Cotton">Бавовна</option>
+                <option value="Linen">Льон </option>
+                <option value="Wool">Вовна </option>
+                <option value="Silk">Шовк </option>
+                
+            </select><br>
+
+            <label for="">колір</label><br>
+            <select name="" id="tovar_col_edit" class="form-select" aria-label="Default select example">
+                <option value=""></option>
+                <option value="Synthetic">Синій</option>
+                <option value="Cotton">Червоний</option>
+                <option value="Linen">роранжовий</option>
+                <option value="КОРИЧНЕВИЙ">коричновий </option>
+                <option value="green">зелений</option>
+                <option value="white">білий</option>
+                
+            </select><br>
+
+            <label for="">Довжина в метрах</label><br>
+            <input type="number" class="tovar_info form-control" id="tovar_dovzina_edit"><br>
+            
+            <label for="">Ширина в метрах</label><br>
+            <input type="number" class="tovar_info form-control" id="'tovar_hirina_edit"><br>
+            
+            <label for="">в роздріб чи рулоном</label><br>
+            <select name="" id="tovar_type_edit" class="form-select" aria-label="Default select example">
+                <option value=""></option>
+                <option value="pepsi">Роздріб</option>
+                <option value="fanta">Рулоном</option>
+            </select><br>
+
+
+            <label for="">Картинка</label><br>
+            <select name="" id="tovar_kartinka_edit" class="form-select" aria-label="Default select example">
+                <option value=""></option>
+                <option value="pepsi">Роздріб</option>
+                <option value="fanta">Рулоном</option>
+            </select><br>
+
+
+            <label for="">Виробник</label><br>
+            <select name="" id="tovar_virobnik_edit" class="form-select" aria-label="Default select example">
+                <option value=""></option>
+                <option value="ALSAN TEXTILE">АЛСАН ТЕКСТИЛЬ</option>
+                <option value="VITA-TEX">ВІТА-ТЕКС</option>
+                <option value="VULTEX-S">ВУЛТЕКС-С</option>
+                <option value="VLADI">VLADI</option>
+                <option value="TECHNOTEXTILES PLUS">ТЕХНОТЕКСТИЛЬ ПЛЮС</option>
+                <option value="SYNERGY">СИНЕРГІЯ</option>
+                <option value="PROBTENS">ПРОБТЕНС</option>
+                <option value="NR PRODUCTION COMPANY">НР ВИРОБНИЧА КОМПАНІЯ</option>
+                
+            </select><br>
+            <button id="zmina">Зберегти зміни</button>
+            <button class="button" onclick="hide('add_tovar_edit')">Закривати</button>
+        </div>
+    </div>
+    <div class="tovars">
+
+        <table>
+            <thead>
+                <tr>
+                    <th class="red">№</th>
+                    <th class="red">Назва</th>
+                    <th class="red">Опис</th>
+                    <th class="red">Ціна</th>
+                    <th class="red">Матеріал</th>
+                    <th class="red">Колір</th>
+                    <th class="red">Довжина</th>
+                    <th class="red">Ширина</th>
+                    <th class="red">Роздріб/Рулоном</th>
+                    <th class="red_2">Картинка</th>
+                    <th class="red">Виробник</th>
+                    <th>Редагування товару</th>
+                    <th>Видаленя товару</th>
+                </tr>
+            </thead>
+
+            <tbody id="tbody">
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+            </tbody>
+
+        </table>
+
+
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-auth-compat.js"></script>
+    <script src="../firebase/config.js"></script>
+    <script src="../scripts/admin_page.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
